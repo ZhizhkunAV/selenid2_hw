@@ -1,11 +1,10 @@
 package dragAndDrope;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.DragAndDropOptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.interactions.Actions;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.DragAndDropOptions.to;
 import static com.codeborne.selenide.Selenide.*;
 
 public class DragAndDrop {
@@ -24,7 +23,7 @@ public class DragAndDrop {
 
         open("/drag_and_drop");
 
-        $("#column-a").dragAndDrop(DragAndDropOptions.to("#column-b"));
+        $("#column-a").dragAndDrop(to("#column-b"));
         $("#column-a").shouldHave(text("B"));
         $("#column-b").shouldHave(text("A"));
     }
@@ -46,4 +45,13 @@ public class DragAndDrop {
         $("#column-a").shouldHave(text("B"));
         $("#column-b").shouldHave(text("A"));
 }
+    @Test
+    void doDragAndDropFour() {
+
+        open("/drag_and_drop");
+
+        $("#column-a").dragAndDrop(to("#column-b"));
+        $("#column-a").shouldHave(text("B"));
+        $("#column-b").shouldHave(text("A"));
+    }
 }
