@@ -44,13 +44,4 @@ public class DragAndDrop {
         $("#column-a").shouldHave(text("B"));
         $("#column-b").shouldHave(text("A"));
 }
-    @Test
-    void doDragAndDropFour() {
-
-        open("/drag_and_drop");
-
-        $("#column-a").dragAndDrop(to("#column-b"));
-        $("#column-a").shouldHave(text("B"));
-        $("#column-b").shouldHave(text("A"));
-    }
 }
